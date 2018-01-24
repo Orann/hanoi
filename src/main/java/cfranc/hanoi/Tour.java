@@ -12,7 +12,12 @@ public class Tour implements IPile<Disque>{
 	@Override
 	public boolean empiler(Disque d) {
         boolean res=false;
-        if(disques.isEmpty()){
+        //Ayant rajouté un test unitaire sur un disque de taille 0, j'ai également rajouté une condition de test pour la taille 0 ici : 
+        if(d.d <= 0){
+            res=false;
+        }
+        //Fin rajout
+        else if(disques.isEmpty()){
             disques.offer(d);
             res=true;
         }
